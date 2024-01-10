@@ -1,5 +1,12 @@
 <template>
   <h1>Exercises:</h1>
+  <div class="add-exercise-form">
+    <input v-model="newExercise.name" placeholder="Exercise Name" />
+    <input v-model="newExercise.sets" type="number" placeholder="Sets" />
+    <input v-model="newExercise.reps" type="number" placeholder="Reps" />
+    <input v-model="newExercise.duration" placeholder="Duration" />
+    <button @click="addExercise">Add Exercise</button>
+  </div>
   <div class="container-fluid">
     <div class="row row-cols-1 row-cols-md-4 g-4">
       <div class="col" v-for="exercise in exercises" :key="exercise.id">
@@ -30,7 +37,8 @@ export default {
   name: 'Persons_view',
   data () {
     return {
-      exercises: []
+      exercises: [],
+      newExercise: { name: '', sets: '', reps: '', duration: '' }
     }
   },
   mounted () {
