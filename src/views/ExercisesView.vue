@@ -1,9 +1,9 @@
 <template>
-
-  <button @click="openPopup(null)">Add Exercise</button>
   <EditExercise ref="myEditPopup"></EditExercise>
   <DeleteExercise ref="myDeletePopup"></DeleteExercise>
-  <h1>Exercises:</h1>
+  <div class="rounded-red-background">
+    <h1>Exercises</h1>
+  </div>
   <div class="container-fluid">
     <div class="row row-cols-1 row-cols-md-4 g-4">
       <div class="col" v-for="exercise in exercises" :key="exercise.id">
@@ -24,9 +24,15 @@
               <td>{{ exercise.sets }}</td>
               <td>{{ exercise.reps }}</td>
               <td>{{ exercise.weight }}KG</td>
-              <td>{{ exercise.duration[0] }}:{{ exercise.duration[1] }}:{{ exercise.duration[2] }}</td>
+              <td v-if="exercise.duration">{{ exercise.duration[0] }}:{{ exercise.duration[1] }}:{{ exercise.duration[2] }}</td>
+              <td v-else></td>
             </tr>
           </table>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 200px;">
+          <i class="bi bi-plus-circle" @mouseover="addhover = true" @mouseleave="addhover = false" :style="addhover ? 'color: green;font-size: 60px;' : 'font-size: 60px;'" @click="openPopup(null)"></i>
         </div>
       </div>
     </div>
@@ -42,6 +48,7 @@ export default {
   components: {
     DeleteExercise,
     EditExercise
+
   },
   methods: {
     openPopup (id) {
@@ -73,6 +80,7 @@ export default {
     return {
       hover: false,
       exercises: [],
+      addhover: false,
       Tid: 0
     }
   },
@@ -92,6 +100,13 @@ export default {
     margin: 16px;
     width: fit-content;
     background-color: #f8e6e6;
+  }
+
+  .rounded-red-background {
+    background-color: #802525;
+    border-radius: 10px;
+    padding: 10px;
+    display: inline-block;
   }
 
   .card-header {
