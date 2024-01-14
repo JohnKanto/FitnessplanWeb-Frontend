@@ -61,7 +61,7 @@ export default {
       }
     },
     deleteExercise (id) {
-      this.$refs.myDeletePopup.open(id)
+      this.$refs.myDeletePopup.open(this.Tid, id)
     },
     refresh () {
       const requestOptions = {

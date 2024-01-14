@@ -92,7 +92,7 @@ export default {
 
       if (this.ID != null) {
         fetch('http://localhost:8080/api/v1/exercise/' + this.ID, {
-          method: 'POST',
+          method: 'PUT',
           headers: {
             'Content-Type': 'application/json'
           },

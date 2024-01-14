@@ -77,7 +77,7 @@ export default {
         console.log('idvorhanden')
         console.log(this.ID)
         fetch('http://localhost:8080/api/v1/trainday/' + this.ID, {
-          method: 'POST',
+          method: 'PUT',
           headers: {
             'Content-Type': 'application/json'
           },
