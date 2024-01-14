@@ -67,7 +67,7 @@ export default {
       if (this.ID != null) {
         console.log('idvorhanden')
         console.log(this.ID)
-        fetch('https://fitnessplan-be.onrender.com/api/v1/trainday/' + this.ID, {
+        fetch('http://localhost:8080/api/v1/trainday/' + this.ID, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
