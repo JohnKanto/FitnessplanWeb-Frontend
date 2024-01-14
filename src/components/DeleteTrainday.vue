@@ -35,7 +35,7 @@ export default {
       const requestOptions = {
         method: 'DELETE'
       }
-      fetch('http://localhost:8080/api/v1/trainday/' + this.ID, requestOptions)
+      fetch('https://fitnessplan-be.onrender.com/api/v1/trainday/' + this.ID, requestOptions)
         .catch(error => console.log('error', error))
       this.close()
     }
