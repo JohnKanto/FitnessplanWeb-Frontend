@@ -7,7 +7,7 @@
         <label for="Nameinput">Name</label>
       </div>
       <div class="form-floating mb-3">
-        <input type="date" class="form-control" id="dateInput" step="1" style="font-size: 1.5em;" v-model="inputDate">
+        <input type="date" :class="['form-control', {'is-invalid': !isDateInputValid}]" id="dateInput" step="1" style="font-size: 1.5em;" v-model="inputDate">
         <label for="timeInput">Date</label>
       </div>
     </div>
@@ -28,7 +28,8 @@ export default {
       isNameInputValid: true,
       isVisible: false,
       ID: null,
-      inputDate: null
+      inputDate: null,
+      isDateInputValid: true
     }
   },
   methods: {
@@ -45,6 +46,7 @@ export default {
       this.isNameInputValid = true
       this.ID = null
       this.inputDate = null
+      this.isDateInputValid = true
     },
     onCancel () {
       this.close()
@@ -54,6 +56,13 @@ export default {
         this.isNameInputValid = false // Setzen Sie auf false, wenn das Input-Feld leer ist
       } else {
         this.isNameInputValid = true
+      }
+      if (this.inputDate == null) {
+        this.isDateInputValid = false
+      } else {
+        this.isDateInputValid = true
+      }
+      if (this.isDateInputValid && this.isNameInputValid) {
         this.sendDataToApi()
         this.close()
       }

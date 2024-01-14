@@ -20,7 +20,7 @@
           <div class="card-body">
             <div class="card-item">
               <label>Datum:</label>
-              <span>{{trainday.date[2]}}:{{trainday.date[1]}}:{{trainday.date[0]}}</span>
+              <span v-if="trainday.date">{{trainday.date[2]}}:{{trainday.date[1]}}:{{trainday.date[0]}}</span>
             </div>
             <button type="button" class="btn btn-primary" @click="goToPage(trainday.id)">Exercises</button>
           </div>
