@@ -1,6 +1,9 @@
 <template>
   <body>
-  <i class="bi bi-house fixed-icon" @click="goTohome"></i>
+  <div class="navigator">
+    <router-link to="/About" style="font-size: 30px;">About</router-link> |
+    <i class="bi bi-house fixed-icon" @click="goTohome"></i>
+  </div>
   <router-view/>
   </body>
 </template>
@@ -23,11 +26,14 @@
 }
 
 .fixed-icon {
-  position: fixed;
+  font-size: 50px;
+}
+.navigator {
   font-size: 40px;
   top: 0;
   right: 0;
   z-index: 1000;
+  position: fixed;
 }
 
 nav {
