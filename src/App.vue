@@ -6,13 +6,13 @@
 </template>
 
 <style>
-body {
-  background-image: url('@/assets/backgroundfitness.png'); /* Pfad zu Ihrem Bild /
-    background-size: cover;     / Stellt sicher, dass der Hintergrund den ganzen Bereich abdeckt /
-    background-position: center; / Zentriert das Bild /
-    background-repeat: no-repeat; / Verhindert das Wiederholen des Bildes /
-    background-attachment: fixed; / Fixiert den Hintergrund beim Scrollen */
-}
+  body {
+    background-image: url('@/assets/backgroundfitness.png'); /* Pfad zu Ihrem Bild */
+    background-size: cover;     /* Stellt sicher, dass der Hintergrund den ganzen Bereich abdeckt */
+    background-position: center; /* Zentriert das Bild */
+    background-repeat: no-repeat; /* Verhindert das Wiederholen des Bildes */
+    background-attachment: fixed; /* Fixiert den Hintergrund beim Scrollen */
+  }
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
